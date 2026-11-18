@@ -46,4 +46,8 @@ IT-Support-Projects/
 
 ## Author
 
-Built and maintained by [Ryan (@boehub)](https://github.com/boehub).
+Built and maintained by [Ryan Boe (@boehub)](https://github.com/boehub).
+
+## License
+
+Released under the [MIT License](LICENSE). Use the tools at your own risk, and only on PCs you have permission to work on.
