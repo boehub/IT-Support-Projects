@@ -1,0 +1,6 @@
+# Windows scripts must keep CRLF or batch labels/goto can break
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.txt text eol=crlf
+*.md  text eol=lf

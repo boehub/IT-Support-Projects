@@ -1,0 +1,80 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Core Windows System Repair
+
+	DISM /Online /Cleanup-Image /RestoreHealth
+
+Downloads healthy system files from Microsoft servers to replace corrupted ones in your core system image. This might look stuck at certain percentages, but let it finish.
+
+	sfc /scannowThe 
+System File Checker. It scans all protected OS files and repairs them using the healthy image DISM just validated.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Hard Drive & Hardware Diagnostics
+
+	chkdsk C: /f /r
+Scans your main hard drive (C:) for file system errors (/f) and bad sectors (/r). It will ask to run the next time you restart your PC.
+
+	wmic diskdrive get model,status
+Provides a quick health check of your connected hard drives or SSDs. It should ideally say "OK" next to each drive.
+
+	powercfg /batteryreport
+Generates a detailed HTML report of your laptop's battery health capacity and history. The command will output a file path you can copy and paste into your browser
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Network & Internet Optimization
+
+	ipconfig /flushdns
+Clears your DNS cache. This forces your PC to grab fresh routing maps for websites, resolving many loading issues.
+
+	netsh int ip reset
+Resets your entire TCP/IP internet stack back to default settings, which fixes deep-seated network configuration bugs.
+
+	netsh winsock reset
+Resets the Winsock catalog. This fixes internet connectivity issues often left behind by malware or uninstalled antivirus programs.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Advanced Storage & Junk Cleanup
+
+	cleanmgr /sageset:1
+Opens an expanded version of the Disk Cleanup tool with hidden options checked, allowing you to select advanced items to delete.
+
+	cleanmgr /sagerun:1
+Executes the automated cleanup based on the settings you selected in the previous command.
+
+	dism /online /cleanup-image /startcomponentcleanup
+Cleans up the WinSxS folder by deleting old, superseded versions of Windows Update files that are taking up gigabytes of space.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--System Performance & Stability
+
+	tasklist
+Displays every single background process and service currently running on your PC, along with its exact memory usage.
+
+	taskkill /f /im process_name.exe
+Forces a frozen or stubborn background program to close immediately (replace process_name.exe with the actual name from tasklist).
+
+	perfmon /report
+Launches the Performance Monitor, which spends 60 seconds tracking your hardware and software to generate a massive system diagnostic report.
+
+	shutdown /r /f /t 0
+Forces an immediate restart (/r) while closing all running applications without warning (/f), which completely clears system memory.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Windows Update & Feature Fixes
+
+	net stop wuauserv
+Stops the background Windows Update service so you can clear out corrupted temporary update downloads.
+
+	net stop bits
+Stops the Background Intelligent Transfer Service, which is another crucial cog in the Windows Update loop.
+
+	net start wuauserv
+Restarts the Windows Update service after you've cleared or troubleshooted the system.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
