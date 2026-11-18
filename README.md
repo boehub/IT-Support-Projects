@@ -1,4 +1,4 @@
-# IT Support Projects
+# IT Support Projects :)
 
 Tools, scripts, and guides for PC repair and IT support. Batch, PowerShell, Windows 11 diagnostics, backup, and network fixes.
 
