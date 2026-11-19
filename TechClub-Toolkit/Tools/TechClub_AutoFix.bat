@@ -34,8 +34,11 @@ echo.
 echo This will run diagnostics, repairs and updates. It can take
 echo 30-90 minutes. Do NOT unplug the USB or power off the PC.
 echo.
-echo Starting in 10 seconds. Close this window to cancel.
-timeout /t 10 >nul
+echo This CHANGES the PC: it repairs Windows files, updates apps and
+echo Windows, and clears temp files. Run Backup first.
+echo.
+choice /c YN /n /m "Start Auto-Fix now? (Y/N): "
+if errorlevel 2 exit /b 0
 
 echo Tech Club Auto-Fix report > "%REPORT%"
 echo Machine: %COMPUTERNAME%   User: %USERNAME%   Started: %DATE% %TIME% >> "%REPORT%"
@@ -124,7 +127,7 @@ if "%ONLINE%"=="1" (
     UsoClient StartScan
     UsoClient StartDownload
     UsoClient StartInstall
-    echo - Windows Update triggered in background - check Settings ^> Windows Update >> "%REPORT%"
+    echo - Windows Update requested via UsoClient - not honored on every Windows 11 build - confirm in Settings ^> Windows Update >> "%REPORT%"
     echo       Updating Defender signatures...
     powershell -NoProfile -Command "Update-MpSignature" > "%LOGDIR%\11_defender.txt" 2>&1
 ) else (

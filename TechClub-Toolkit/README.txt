@@ -38,3 +38,32 @@ NOTES
   - Only run these on PCs you have permission to work on.
   - Windows activation: Quick Check only REPORTS the state. If a PC is not
     activated, use Settings > System > Activation > Troubleshoot or a valid key.
+
+WHAT AUTO-FIX CHANGES
+  It asks Y/N before starting. Once started, it:
+  - repairs the Windows image and system files (DISM, SFC)
+  - scans the system drive with CHKDSK /scan (no repair, no restart)
+  - updates installed apps with winget, if winget is present
+  - asks Windows Update to scan, download and install updates
+  - updates Defender signatures and runs a quick scan
+  - DELETES the contents of the current user's temp folder and
+    C:\Windows\Temp, then cleans the Windows component store. After the
+    component store cleanup, installed Windows updates can no longer be
+    uninstalled.
+  It does not format, uninstall programs or edit the registry.
+
+KNOWN LIMITS
+  - Windows Update: Auto-Fix uses UsoClient, which Microsoft has deprecated.
+    It does nothing on some Windows 11 builds. After a run, open Settings >
+    Windows Update to confirm updates are really installing.
+  - winget updates every app it can, silently. That can restart or close
+    programs the customer has open.
+  - CHKDSK /scan only checks. Fixing a drive needs chkdsk /f (see the
+    Reference folder) and a restart.
+  - Output is parsed in English, so other Windows languages may show wrong
+    results or blank fields.
+  - Group Policy on managed PCs can block PowerShell scripts, winget, or
+    Windows Update changes. Do not try to get around a policy on a PC that
+    is not yours.
+  - Menu option 5 asks Y/N before Auto-Fix, and Auto-Fix asks again. This is
+    deliberate.
