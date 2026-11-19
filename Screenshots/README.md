@@ -2,12 +2,12 @@
 
 Visual reference for what the TechClub Toolkit looks like when it runs, so you know what "normal" looks like before you are standing at a customer's PC.
 
-There are two kinds of image here. **They are kept apart on purpose** so a mockup is never mistaken for a real run.
+There are two kinds of image here. **They are kept in separate folders on purpose** so a mockup is never mistaken for a real run.
 
 | Folder | What it contains | Status |
 |---|---|---|
 | [`real/`](real/) | Screenshots captured from actual runs of the toolkit | Add yours here (see the capture guide below) |
-| [`mockups/`](mockups/) | Images rendered from the scripts' own menu text and output format, with sample values | Illustrative only. Every image carries a red "ILLUSTRATIVE MOCKUP" banner |
+| [`mockups/`](mockups/) | Images rendered from the scripts' own menu text and output format, with sample values | Illustrative only. They are not captures of a real run, so they are kept in their own folder |
 
 ## Mockups
 
