@@ -12,7 +12,7 @@ This repo is a growing collection of things I use and build for hands-on support
 | [Runbooks](Runbooks/) | Step-by-step procedures: repair visit checklist, PC won't boot, slow PC, no internet, suspected malware, customer handoff | Markdown |
 | [Reference](Reference/) | Command sheets: Windows repair, PowerShell equivalents, network commands and ports, Run commands and shortcuts | Markdown, text |
 | [Hardware-Guide](Hardware-Guide/) | What each PC part is, how it works, how to check and upgrade it, and how it fails | Markdown |
-| [Screenshots](Screenshots/) | What the toolkit looks like when it runs: labeled mockups now, plus a guide for adding real captures | PNG |
+| [Screenshots](Screenshots/) | What the toolkit looks like when it runs: example screens with sample values, plus a guide for adding real captures | PNG |
 | [Data-Analysis](Data-Analysis/) | Spreadsheet hardware comparisons: an interactive dashboard and the original Ryzen 7 4800U vs. Ryzen 9 5950X workbook | Excel |
 
 ## Quick start: TechClub Toolkit
@@ -42,7 +42,7 @@ IT-Support-Projects/
 ├── Reference/           Command cheat sheets
 ├── Hardware-Guide/      How PC parts work and fail
 ├── Data-Analysis/       Hardware comparison workbooks
-├── Screenshots/         Toolkit screenshots (real/ and mockups/)
+├── Screenshots/         Toolkit screenshots (examples/ and real/)
 └── README.md
 ```
 
